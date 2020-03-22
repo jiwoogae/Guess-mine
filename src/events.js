@@ -14,7 +14,10 @@ const events = {
   playerUpdate: "playerUpdate",
   gameStart: "gameStart",
   leaderNotfi: "leaderNotfi",
-  gameEnded: "gameEnded"
+  gameEnded: "gameEnded",
+  gameStarting: "gameStarting",
+  correctAnswer: "correctAnswer",
+  timeSet: "timeSet"
 };
 
 export default events;

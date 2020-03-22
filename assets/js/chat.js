@@ -2,6 +2,7 @@ import { getSocket } from "./sockets";
 
 const messages = document.getElementById("jsMessages");
 const sendMsg = document.getElementById("jsSendMsg");
+const messageInput = sendMsg.querySelector("input");
 
 const appendMsg = (text, nickname) => {
   const li = document.createElement("li");
@@ -24,6 +25,14 @@ const handleSendMsg = event => {
 
 export const handleNewMessage = ({ message, nickname }) =>
   appendMsg(message, nickname);
+
+export const handleAnwser = ({ message, nickname }) => {
+  appendMsg(`${nickname} is correct! The anwser is ${message}`, "bot");
+};
+
+export const disableChat = () => (sendMsg.style.display = "none");
+
+export const enableChat = () => (sendMsg.style.display = "flex");
 
 if (sendMsg) {
   sendMsg.addEventListener("submit", handleSendMsg);
